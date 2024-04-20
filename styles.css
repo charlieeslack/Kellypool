@@ -1,0 +1,197 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Makes sure the body takes at least the full height of the viewport */
+    margin: 0; /* Removes default margin */
+    font-family: 'Lucida Console', sans-serif;
+    text-align: center;
+    background-color: darkolivegreen;
+    padding: 20px;
+}
+
+.container {
+    width: 100%; /* You can adjust this to fit your design */
+    max-width: 600px; /* Sets a maximum width for the container */
+    color: white;
+}
+
+
+
+#assignments {
+    margin-top: 20px;
+}
+
+.assignment-container {
+    display: flex;
+    justify-content: center;  /* Aligns children elements (label, button, and ball container) to the center */
+    align-items: center;      /* Ensures vertical alignment is centered */
+    margin-bottom: 10px;
+    width: 100%;  /* Ensures the container stretches across the full width of its parent container */
+}
+
+.reveal-button {
+    margin-right: 10px;  /* Space between the button and the images */
+}
+
+.ball-container {
+    display: flex; /* Use flex but hide initially using visibility and max-height */
+    flex-wrap: nowrap; /* Prevents wrapping of items */
+    align-items: center;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    width: 0; /* Start with no width and expand */
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, width 1s ease-in-out; /* Transition for smooth effect */
+}
+
+.ball-container.visible {
+    max-height: 200px;  /* Enough to display the images, adjust as needed */
+    opacity: 1;
+    width: auto;  /* Allow the container to expand to fit the content */
+}
+
+.ball-image {
+    width: 50px;  /* Example size, adjust as needed */
+    height: auto;
+    margin-left: 10px;
+}
+/*label, select, button {
+    margin: 10px;
+    font-size: 16px;
+}*/
+select {
+    margin: 10px;
+    font-size: 16px;
+    width: 50px;
+    text-align: center;
+    font-family: 'Lucida Console', sans-serif;
+    white-space: nowrap; /* Prevent the label from wrapping */
+    margin-right: 10px; 
+}
+
+button {
+    margin: 10px;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Lucida Console', sans-serif;
+}
+.button {
+    background-color: #14f39a; /* Green background */
+    color: rgb(31, 31, 31); /* White text */
+    padding: 15px 32px; /* Top and bottom padding, left and right padding */
+    text-align: center; /* Center-align text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Allows setting width and height */
+    font-size: 16px; /* Larger font size */
+    margin: 4px 2px; /* Margin around the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border: none; /* No borders */
+    border-radius: 8px; /* Rounded corners */
+    transition: background 0.1s;
+}
+.button:hover {
+    background-color: #45a049; /* A darker green when hovered */
+}
+
+.button:active {
+    background-color: #7d0d87;
+    box-shadow: 0 5px #666; /* Add a shadow to look like the button is pressed down */
+    transform: translateY(4px); /* Move the button down slightly */
+}
+
+.reveal-button {
+    background-color: #53db3e; /* Blue background */
+    color: rgb(0, 0, 0); /* White text */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.1s;
+     /* Smooth transition for hover effect */
+}
+
+.reveal-button:hover {
+    background-color: #209e6a; /* Darker blue when hovered */
+    
+}
+.reveal-button:active {
+    background-color: #ba0dca;
+    box-shadow: 0 5px #635252; /* Add a shadow to look like the button is pressed down */
+    transform: translateY(4px); /* Move the button down slightly */
+}
+
+#playerCount {
+    width: 100px; /* Default smaller width */
+    transition: width 0.3s ease-in-out; /* Smooth transition for width changes */
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+    }
+}
+
+.shake {
+    animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+
+
+label {
+    margin-right: 10px; /* Ensures there's space between the label and the select box */
+    white-space: nowrap; /* Prevents the label from wrapping */
+    text-align: center;
+    font-family: 'Lucida Console', sans-serif;
+}
+.select-container {
+    display: flex;
+    align-items: center; /* Ensures vertical centering of elements */
+    justify-content: flex-start; /* Ensures the label is on the left and select is on the right */
+    margin-bottom: 10px; /* Space between rows */
+}
+
+
+.select-style {
+    width: 100px; /* Fixed width for the select element */
+    padding: 8px 20px 8px 10px;
+    background-color: #4CAF50; /* Example background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+}
+
+/*.select-container::after {
+    content: '\25BC'; /* Unicode for downward arrow 
+    position: absolute;
+    right: 10px; /* Adjust this value to fine-tune the arrow position 
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    pointer-events: none; /* Allows clicks to pass through to the select element 
+    font-size: 12px; /* Keep the arrow size reasonable 
+}*/
+/* Style for options to ensure text color is readable
+.select-style option {
+    background: #4CAF50; /* Ensure option background matches 
+    color: white; /* Ensure text color is white 
+}*/

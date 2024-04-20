@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelly Pool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kelly Pool</h1>
+        <div class="select-container">
+            <label for="playerCount">Select number of players:</label>
+            <select id="playerCount" class="select-style">
+                <option value="" selected disabled>Players</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+            </select>
+        </div>
+        <div class="select-container">
+            <label for="ballsPerPlayer">Select balls per player:</label>
+            <select id="ballsPerPlayer" class="select-style">
+                <option value="" selected disabled>Balls</option>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <button class = "button" onclick="assignBalls()">Assign Balls</button>
+        <div id="assignments"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
